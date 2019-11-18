@@ -1,0 +1,20 @@
+.social
+  margin: 0
+  padding: 0
+  list-style: none
+  display: flex
+  align-items: center
+  &__item
+    margin-right: 1.5rem
+    &:last-child
+      margin-right: 0
+  &__link
+    &:hover
+      .social
+        &__icon
+          fill: $accent
+  &__icon
+    width: 2.5rem
+    height: 2.5rem
+    fill: $main-color
+    +trans

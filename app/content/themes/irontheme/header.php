@@ -17,27 +17,80 @@
 <div class="wrapper">
   <header class="header">
     <div class="container">
+      <div class="header__left">
+        <div class="logo header__logo">
+          <?php the_custom_logo(); ?>
+        </div>
+      </div>
 
-      <nav class="nav">
-        <button type="button" class="nav__close"></button>
-        <?php
-        wp_nav_menu( array(
-          'theme_location' => 'primary',
-          'menu'            => '', 
-          'container'       => '', 
-          'container_class' => '', 
-          'container_id'    => '',
-          'menu_class'      => 'nav-list', 
-          'menu_id'         => '',
-        ) );
-        ?>
-      </nav>
+      <div class="header__right">
+        <div class="header__right-top">
+          <div class="header-logos header__logos">
+            <div class="header-logos__item">
+              <img src="<?php echo THEME_URL; ?>/images/content/header-logo-1.png" alt="">
+            </div>
+            <div class="header-logos__item">
+              <img src="<?php echo THEME_URL; ?>/images/content/header-logo-2.png" alt="">
+            </div>
+          </div><!-- /.header-logo -->
 
-      <div class="nav-overlay"></div>
+          <?php $phone = get_field( 'phone', 'option' );
+          $social = get_field( 'social', 'option' );
+          if ($social['facebook'] || $social['twitter'] || $social['instagram'] || $phone): ?>
+            <ul class="social header__social">
+              <?php if ($social['facebook']): ?>
+                <li class="social__item">
+                  <a href="<?php echo esc_url( $social['facebook'] ); ?>" class="social__link"><?php ith_the_icon( 'facebook', 'social__icon' ); ?></a>
+                </li>
+              <?php endif; ?>
+              <?php if ($social['twitter']): ?>
+                <li class="social__item">
+                  <a href="<?php echo esc_url( $social['twitter'] ); ?>" class="social__link"><?php ith_the_icon( 'twitter', 'social__icon' ); ?></a>
+                </li>
+              <?php endif; ?>
+              <?php if ($social['instagram']): ?>
+                <li class="social__item">
+                  <a href="<?php echo esc_url( $social['instagram'] ); ?>" class="social__link"><?php ith_the_icon( 'instagram', 'social__icon' ); ?></a>
+                </li>
+              <?php endif; ?>
+              <?php if ($phone): ?>
+                <li class="social__item">
+                  <a href="tel:<?php echo preg_replace( '![^0-9/+]+!', '', $phone ); ?>" class="social__link"><?php ith_the_icon( 'phone', 'social__icon' ); ?></a>
+                </li>
+              <?php endif; ?>
+            </ul>
+          <?php endif; ?>
 
-      <button type="button" class="nav-toggle">
-        <span class="nav-toggle__line"></span>
-      </button>
+          <?php if ($phone): ?>
+            <div class="phone header__phone">
+              <p class="phone__descr">We’re here to help:</p>
+              <a href="tel:<?php echo preg_replace( '![^0-9/+]+!', '', $phone ); ?>" class="phone__tel"><?php echo $phone; ?></a>
+            </div>
+          <?php endif; ?>
+        </div>
+        <div class="header__right-bottom">
+          <nav class="nav header__nav">
+            <button type="button" class="nav__close"></button>
+            <?php
+            wp_nav_menu( array(
+              'theme_location' => 'primary',
+              'menu'            => '',
+              'container'       => '',
+              'container_class' => '',
+              'container_id'    => '',
+              'menu_class'      => 'nav-list',
+              'menu_id'         => '',
+            ) );
+            ?>
+          </nav>
+
+          <div class="nav-overlay"></div>
+        </div>
+
+        <button type="button" class="nav-toggle">
+          <span class="nav-toggle__line"></span>
+        </button>
+      </div>
 
     </div>
   </header><!-- /.header-->
