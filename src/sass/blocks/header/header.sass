@@ -1,6 +1,9 @@
 .header
   padding: 5.5rem 0 4rem
+  +md-block
+    padding: 5.99vw 0
   .container
+    position: relative
     display: flex
     align-items: flex-end
   &__left
@@ -14,6 +17,8 @@
       align-items: flex-end
       justify-content: flex-end
       padding-bottom: 35px
+      +md-block
+        display: none
   &__logos
     margin-right: 4rem
   &__social
@@ -28,5 +33,7 @@
   align-items: center
   &__item
     margin-right: 4.5rem
+    +md-block
+      margin-right: 2vw
     &:last-child
       margin-right: 0

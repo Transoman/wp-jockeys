@@ -1,20 +1,23 @@
 .btn
   display: inline-block
   vertical-align: middle
-  padding: 10px 15px
+  padding: 0.5rem 2rem
   font-family: $main-font
-  font-size: 16px
+  font-size: 2.6rem
   font-weight: 700
   color: #fff
   text-align: center
-  background-color: $accent
+  background-color: $main-color
   border: 0
+  border-radius: 1.5rem
   outline: none
   text-decoration: none
   cursor: pointer
   user-select: none
   transition: all .25s ease
-  text-transform: uppercase
+  +md-block
+    padding: 0.8vw 3.26vw
+    font-size: 3.6vw
   &:hover
     background-color: lighten($accent, 5%)
     color: #fff

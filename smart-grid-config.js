@@ -12,11 +12,11 @@ var settings = {
   },
   breakPoints: {
     lg: {
-      width: '990px', /* -> @media (max-width: 1100px) */
-      fields: '8.08rem'
+      width: '1560px',
     },
     md: {
-      width: '960px'
+      width: '1230px',
+      fields: 0
     },
     // sm: {
     //   width: '780px',

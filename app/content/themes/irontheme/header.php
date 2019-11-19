@@ -82,6 +82,51 @@
               'menu_id'         => '',
             ) );
             ?>
+
+            <div class="nav__mobile">
+              <div class="header-logos nav__logos">
+                <div class="header-logos__item">
+                  <img src="<?php echo THEME_URL; ?>/images/content/header-logo-1.png" alt="">
+                </div>
+                <div class="header-logos__item">
+                  <img src="<?php echo THEME_URL; ?>/images/content/header-logo-2.png" alt="">
+                </div>
+              </div><!-- /.header-logo -->
+
+              <?php $phone = get_field( 'phone', 'option' );
+              $social = get_field( 'social', 'option' );
+              if ($social['facebook'] || $social['twitter'] || $social['instagram'] || $phone): ?>
+                <ul class="social nav__social">
+                  <?php if ($social['facebook']): ?>
+                    <li class="social__item">
+                      <a href="<?php echo esc_url( $social['facebook'] ); ?>" class="social__link"><?php ith_the_icon( 'facebook', 'social__icon' ); ?></a>
+                    </li>
+                  <?php endif; ?>
+                  <?php if ($social['twitter']): ?>
+                    <li class="social__item">
+                      <a href="<?php echo esc_url( $social['twitter'] ); ?>" class="social__link"><?php ith_the_icon( 'twitter', 'social__icon' ); ?></a>
+                    </li>
+                  <?php endif; ?>
+                  <?php if ($social['instagram']): ?>
+                    <li class="social__item">
+                      <a href="<?php echo esc_url( $social['instagram'] ); ?>" class="social__link"><?php ith_the_icon( 'instagram', 'social__icon' ); ?></a>
+                    </li>
+                  <?php endif; ?>
+                  <?php if ($phone): ?>
+                    <li class="social__item">
+                      <a href="tel:<?php echo preg_replace( '![^0-9/+]+!', '', $phone ); ?>" class="social__link"><?php ith_the_icon( 'phone', 'social__icon' ); ?></a>
+                    </li>
+                  <?php endif; ?>
+                </ul>
+              <?php endif; ?>
+
+              <?php if ($phone): ?>
+                <div class="phone nav__phone">
+                  <p class="phone__descr">We’re here to help:</p>
+                  <a href="tel:<?php echo preg_replace( '![^0-9/+]+!', '', $phone ); ?>" class="phone__tel"><?php echo $phone; ?></a>
+                </div>
+              <?php endif; ?>
+            </div>
           </nav>
 
           <div class="nav-overlay"></div>

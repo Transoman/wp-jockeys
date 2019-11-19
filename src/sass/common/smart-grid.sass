@@ -1,8 +1,8 @@
 $columns: 12
 $atom: (100% / $columns)
 
-$break_lg: 990px
-$break_md: 960px
+$break_lg: 1560px
+$break_md: 1230px
 
 $offset: 70px
 $offset_lg: $offset
@@ -13,15 +13,15 @@ $offset_lg_one_side: ($offset_lg / 2)
 $offset_md_one_side: ($offset_md / 2)
 
 $fields: 15px
-$fields_lg: 8.08rem
+$fields_md: 0
 
 =wrapper-full()
     padding-left: $fields
     padding-right: $fields
 
-    +lg-block()
-        padding-left: $fields_lg
-        padding-right: $fields_lg
+    +md-block()
+        padding-left: $fields_md
+        padding-right: $fields_md
 
 =row-offsets()
     margin-left: ($offset_one_side * -1)

@@ -20,8 +20,12 @@
 html
   height: 100%
   font-size: 62.5%
-  //+r(1530)
-  //  font-size: 1vw
+  +md-block
+    //font-size: 1vw
+    //font-size: calc(1px + 1vw)
+    font-size: calc(16px + (23 - 16) * (100vw - 320px) / (920 - 320))
+  +r(576)
+    //font-size: calc(6px + 1vw)
 
 body
   margin: 0
@@ -34,6 +38,7 @@ body
   line-height: 1.6
   color: $main-color
   overflow-x: hidden
+  letter-spacing: -0.01em
 
 img
   max-width: 100%
@@ -46,6 +51,11 @@ a
     color: $accent
     outline: none
     text-decoration: none
+
+section
+  padding: 4.5rem 0
+  +md-block
+    padding: 4.35vw 0
 
 /* Hidden element */
 .visually-hidden
@@ -66,5 +76,9 @@ a
 .content
   flex: 1 0 auto
 
-.container
+.container, .site-main
   +wrapper
+  +r(1560)
+    max-width: 1200px
+  +r(1230)
+    max-width: 82.6vw
