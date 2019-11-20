@@ -62,6 +62,7 @@ jQuery(document).ready(function($) {
 
   // Slider
   let champSlider = new Swiper('.championship-slider', {
+    spaceBetween: 30,
     autoHeight: true,
     pagination: {
       el: '.swiper-pagination',

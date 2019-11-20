@@ -1,6 +1,7 @@
 .hero
   position: relative
   z-index: 1
+  min-height: 86rem
   padding: 8rem 0 3rem
   background:
     color: $main-color
@@ -9,7 +10,8 @@
     size: cover
   color: #fff
   +md-block
-    padding: 9.78vw 0 47.82vw
+    min-height: auto
+    padding: vw(85) 0 vw(400)
   &::before
     content: ''
     position: absolute
@@ -26,6 +28,7 @@
     +md-block
       max-width: 56.52vw
   &__title
+    display: inline-block
     margin: 0
     color: #fff
     font-size: 9.9rem
@@ -51,6 +54,7 @@
     font-size: 3.8rem
     letter-spacing: 0.024em
     +md-block
+      margin: 0
       font-size: 3.91vw
   &__icon
     width: 11rem

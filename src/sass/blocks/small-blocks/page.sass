@@ -1,0 +1,23 @@
+.page-content
+  font-size: 3.8rem
+  line-height: 1.1
+  +md-block
+    font-size: vw(43)
+  &__wrap
+    max-width: 114rem
+    +md-block
+      max-width: none
+  p
+    margin-bottom: 2rem
+    +md-block
+      margin-bottom: vw(20)
+
+.similar-post
+  +row-flex
+  +md-block
+    margin-top: vw(75)
+  .news-card
+    +col
+    width: calc(33.33% - 70px)
+    +md-block
+      width: 100%

@@ -19,13 +19,19 @@
     padding: 0.8vw 3.26vw
     font-size: 3.6vw
   &:hover
-    background-color: lighten($accent, 5%)
+    background-color: lighten($main-color, 5%)
     color: #fff
   &:focus
-    background-color: darken($accent, 5%)
+    background-color: darken($main-color, 5%)
     color: #fff
     outline: none
   &[disabled]
     background-color: #e5e5e5
     cursor: not-allowed
     color: #fff
+  &--red
+    background-color: $accent
+    &:hover
+      background-color: lighten($accent, 5%)
+    &:focus
+      background-color: darken($accent, 5%)
