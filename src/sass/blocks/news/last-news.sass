@@ -1,0 +1,11 @@
+@import 'news-card'
+
+.last-news
+  padding-bottom: 1.5rem
+  &__list
+    +row-flex
+    .news-card
+      +col
+      width: calc(33.33% - 70px)
+      +md-block
+        width: 100%

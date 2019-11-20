@@ -3,7 +3,9 @@
 global.jQuery = require('jquery');
 let svg4everybody = require('svg4everybody'),
   popup = require('jquery-popup-overlay'),
-  iMask = require('imask');
+  iMask = require('imask'),
+  Swiper = require('swiper');
+
 
 jQuery(document).ready(function($) {
   // Toggle nav menu
@@ -58,10 +60,44 @@ jQuery(document).ready(function($) {
     }
   };
 
+  // Slider
+  let champSlider = new Swiper('.championship-slider', {
+    autoHeight: true,
+    pagination: {
+      el: '.swiper-pagination',
+      type: 'bullets',
+      clickable: true
+    },
+  });
+
+  // Table show
+  let showMoreRow = function() {
+    let btnMore = $('.championship-table__more');
+
+    if (btnMore) {
+      btnMore.each(function() {
+        let x = 10;
+        $(this).click(function (e) {
+          e.preventDefault();
+
+          let table = $(this).parents('.championship-table');
+          let tr_size = table.find('tbody tr').length;
+          x += 10;
+          table.find('tbody tr').slice(0, x).slideDown();
+          if (x >= tr_size){
+            $(this).hide();
+          }
+
+          champSlider.update();
+        });
+      });
+    }
+  };
 
   toggleNav();
   initModal();
   inputMask();
+  showMoreRow();
 
   // SVG
   svg4everybody({});

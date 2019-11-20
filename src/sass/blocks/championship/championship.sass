@@ -1,0 +1,17 @@
+.championship-slider
+  padding-bottom: 8rem
+  +md-block
+    padding-bottom: 60px
+  .swiper-pagination
+    bottom: 0
+    line-height: 1
+
+.championship-table
+  tbody
+    tr
+      &:nth-child(n + 11)
+        display: none
+  &__more
+    color: $accent
+    &:hover, &:focus
+      color: rgba($accent, 0.7)

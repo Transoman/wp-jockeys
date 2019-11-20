@@ -1,0 +1,36 @@
+.news-card
+  display: flex
+  flex-direction: column
+  margin-bottom: 7rem
+  +md-block
+    margin-bottom: 7.6vw
+  &__img-wrap
+    margin-bottom: 3rem
+    +md-block
+      margin-bottom: 3.26vw
+    img
+      display: block
+      width: 100%
+  &__title
+    margin-bottom: 2rem
+    line-height: 1.15
+    +lg-block
+      font-size: 3.2rem
+    +md-block
+      margin-bottom: 2.17vw
+      font-size: 4.67vw
+    a
+      color: inherit
+      &:hover, &:focus
+        color: $accent
+  &__publish
+    display: block
+    margin-top: auto
+    margin-bottom: 1.5rem
+    font-size: 2.8rem
+    color: $accent
+    +md-block
+      margin-bottom: 2.71vw
+      font-size: 3.8vw
+  .btn
+    align-self: flex-start

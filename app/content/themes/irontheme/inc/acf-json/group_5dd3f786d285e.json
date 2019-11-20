@@ -160,6 +160,64 @@
                     ],
                     "min": "",
                     "max": ""
+                },
+                "layout_5dd4e3a7eee3a": {
+                    "key": "layout_5dd4e3a7eee3a",
+                    "name": "championship_table",
+                    "label": "Championship Table",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_5dd4e3a7eee3b",
+                            "label": "Title",
+                            "name": "title",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_5dd4f34d25658": {
+                    "key": "layout_5dd4f34d25658",
+                    "name": "partners",
+                    "label": "Partners",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_5dd4f34d25659",
+                            "label": "Title",
+                            "name": "title",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
                 }
             },
             "button_label": "Add Row",
@@ -184,5 +242,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1574178901
+    "modified": 1574237015
 }
