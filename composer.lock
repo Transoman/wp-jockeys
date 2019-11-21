@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "fe38090e68f12465d0b7bba26486f506",
+    "content-hash": "00415fdd1050051efd134ef441f9cc00",
     "packages": [
         {
             "name": "composer/installers",
@@ -258,7 +258,7 @@
         },
         {
             "name": "wpackagist-plugin/clearfy",
-            "version": "1.6.1",
+            "version": "1.6.2",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/clearfy/",
@@ -266,7 +266,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/clearfy.zip?timestamp=1573716364",
+                "url": "https://downloads.wordpress.org/plugin/clearfy.zip?timestamp=1574233094",
                 "reference": null,
                 "shasum": null
             },
@@ -298,15 +298,15 @@
         },
         {
             "name": "wpackagist-plugin/ewww-image-optimizer",
-            "version": "5.1.2",
+            "version": "5.1.3",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/ewww-image-optimizer/",
-                "reference": "tags/5.1.2"
+                "reference": "tags/5.1.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/ewww-image-optimizer.5.1.2.zip",
+                "url": "https://downloads.wordpress.org/plugin/ewww-image-optimizer.5.1.3.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -355,6 +355,26 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/safe-svg/"
+        },
+        {
+            "name": "wpackagist-plugin/w3dev-fancybox",
+            "version": "1.2.3",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/w3dev-fancybox/",
+                "reference": "trunk"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/w3dev-fancybox.zip?timestamp=1527880579",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/w3dev-fancybox/"
         },
         {
             "name": "wpackagist-plugin/wordpress-seo",

@@ -92,6 +92,11 @@ if ( ! function_exists( 'ith_setup' ) ) :
       'image',
       'video'
     ) );
+
+    /**
+     * Add Image Size
+     */
+    add_image_size( 'post-card', 760, 460, true );
   }
 endif;
 add_action( 'after_setup_theme', 'ith_setup' );
@@ -107,7 +112,7 @@ function ith_content_width() {
   // This variable is intended to be overruled from themes.
   // Open WPCS issue: {@link https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards/issues/1043}.
   // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound
-  $GLOBALS['content_width'] = apply_filters( 'ith_content_width', 640 );
+  $GLOBALS['content_width'] = apply_filters( 'ith_content_width', 990 );
 }
 add_action( 'after_setup_theme', 'ith_content_width', 0 );
 
@@ -134,6 +139,10 @@ add_action( 'widgets_init', 'ith_widgets_init' );
  */
 function ith_scripts() {
   wp_enqueue_style( 'ith-style', get_stylesheet_uri() );
+
+  wp_deregister_script( 'jquery' );
+  wp_register_script( 'jquery', get_template_directory_uri() . '/js/jquery.min.js', false, null, false );
+  wp_enqueue_script( 'jquery' );
 
   wp_enqueue_script( 'ith-main', get_template_directory_uri() . '/js/common.js', array(), '', true);
 

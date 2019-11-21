@@ -1,6 +1,6 @@
 'use strict';
 
-global.jQuery = require('jquery');
+// global.jQuery = require('jquery');
 let svg4everybody = require('svg4everybody'),
   popup = require('jquery-popup-overlay'),
   iMask = require('imask'),

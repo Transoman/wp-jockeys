@@ -3,6 +3,8 @@
   line-height: 1.1
   +md-block
     font-size: vw(43)
+  &:last-child
+    padding-bottom: 0
   &__wrap
     max-width: 114rem
     +md-block
@@ -11,6 +13,24 @@
     margin-bottom: 2rem
     +md-block
       margin-bottom: vw(20)
+  .wp-block-gallery
+    width: 153rem
+    margin: 7.5rem 0 calc(7.5rem - 16px)
+    +lg-block
+      width: 117rem
+    +md-block
+      width: 100%
+      margin: vw(80) 0 calc(8.69vw - 16px)
+  .wp-block-embed
+    margin-top: 6.5rem
+    +md-block
+      margin-top: vw(50)
+    &:last-child
+      margin-bottom: 0
+    iframe
+      +md-block
+        width: 100%
+        height: vw(420)
 
 .similar-post
   +row-flex
