@@ -23,10 +23,6 @@
     pointer-events: none
     background-image: linear-gradient(90deg, rgba(#817d97, 1), rgba(#fff, 0))
     mix-blend-mode: multiply
-  &__content
-    //max-width: 55rem
-    //+md-block
-    //  max-width: 56.52vw
   &__title
     display: inline-block
     margin: 0
@@ -35,13 +31,14 @@
     font-weight: 700
     line-height: 1
     letter-spacing: -0.01em
+    +lg-block
+      font-size: 8rem
     +md-block
       font-size: 10.1vw
     &::after
       content: ''
       display: block
       width: 100%
-      //max-width: 54rem
       height: 1.8rem
       margin: 2rem 0 3rem
       background-color: $accent
@@ -53,6 +50,8 @@
     margin-bottom: 6rem
     font-size: 3.8rem
     letter-spacing: 0.024em
+    +lg-block
+      font-size: 3rem
     +md-block
       margin: 0
       font-size: 3.91vw
