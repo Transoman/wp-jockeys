@@ -3,11 +3,17 @@
   margin-bottom: 20px
 .form-field
   width: 100%
-  padding: 15px 25px
-  border: 1px solid #C4C4C4
-  border-radius: 5px
+  padding: 2.5rem 4.5rem
+  border: 0.3rem solid #9a9b9a
+  border-radius: 4rem
   box-shadow: none
   appearance: none
+  font-size: 2.6rem
+  +trans
+  +md-block
+    padding: vw(25) vw(45)
+    font-size: 1.3rem
+    border-width: vw(3)
   &:focus
     outline: none
     border-color: $accent

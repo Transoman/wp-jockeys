@@ -97,6 +97,7 @@ if ( ! function_exists( 'ith_setup' ) ) :
      * Add Image Size
      */
     add_image_size( 'post-card', 760, 460, true );
+    add_image_size( 'cat-card', 710, 500, true );
   }
 endif;
 add_action( 'after_setup_theme', 'ith_setup' );

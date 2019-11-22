@@ -48,3 +48,8 @@ if ( class_exists( 'acf' ) ) {
  * Custom Post Type
  */
 require get_template_directory() . '/inc/custom-post-type.php';
+
+/**
+ * Custom Taxonomies
+ */
+require get_template_directory() . '/inc/custom-taxonomies.php';

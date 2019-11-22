@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4183bb7b5b29e46e1e983717c915881d",
+    "content-hash": "5a23319f5d0a38cd21ffe997bf9b07da",
     "packages": [
         {
             "name": "composer/installers",
@@ -377,6 +377,26 @@
             "homepage": "https://wordpress.org/plugins/safe-svg/"
         },
         {
+            "name": "wpackagist-plugin/taxonomy-terms-order",
+            "version": "1.5.7",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/taxonomy-terms-order/",
+                "reference": "tags/1.5.7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/taxonomy-terms-order.1.5.7.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/taxonomy-terms-order/"
+        },
+        {
             "name": "wpackagist-plugin/w3dev-fancybox",
             "version": "1.2.3",
             "source": {
@@ -398,15 +418,15 @@
         },
         {
             "name": "wpackagist-plugin/wordpress-seo",
-            "version": "12.5",
+            "version": "12.5.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wordpress-seo/",
-                "reference": "tags/12.5"
+                "reference": "tags/12.5.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.12.5.zip",
+                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.12.5.1.zip",
                 "reference": null,
                 "shasum": null
             },

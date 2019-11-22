@@ -1,0 +1,39 @@
+.form-search
+  padding-top: 8rem
+  padding-bottom: 4rem
+  +md-block
+    padding: vw(50) 0 vw(40)
+  h2
+    margin-bottom: 3rem
+    +md-block
+      margin-bottom: vw(35)
+  &__form
+    max-width: calc((100% / 12) * 8 - 25px)
+    +md-block
+      max-width: none
+  .form-group
+    margin: 0
+  &__btn
+    position: absolute
+    top: 50%
+    right: 5rem
+    transform: translateY(-50%)
+    background: none
+    padding: 0
+    border: 0
+    +md-block
+      right: vw(55)
+    &:hover
+      .form-search
+        &__btn-icon
+          fill: $accent
+    &:focus
+      outline: none
+    &-icon
+      width: 5.5rem
+      height: 6rem
+      fill: #6f6e6e
+      +trans
+      +md-block
+        width: vw(55)
+        height: vw(60)

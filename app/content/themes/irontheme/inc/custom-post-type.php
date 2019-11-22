@@ -99,3 +99,69 @@ function event_post_type() {
 
 }
 add_action( 'init', 'event_post_type', 0 );
+
+// Register Service Post Type
+function service_post_type() {
+
+  $labels = array(
+    'name'                  => _x( 'Services', 'Post Type General Name', 'ith' ),
+    'singular_name'         => _x( 'Service', 'Post Type Singular Name', 'ith' ),
+    'menu_name'             => __( 'Services', 'ith' ),
+    'name_admin_bar'        => __( 'Services', 'ith' ),
+    'archives'              => __( 'Services', 'ith' )
+  );
+  $args = array(
+    'label'                 => __( 'Service', 'ith' ),
+    'labels'                => $labels,
+    'supports'              => array( 'title', 'editor', 'thumbnail' ),
+    'taxonomies'            => array( 'service_cat' ),
+    'hierarchical'          => true,
+    'public'                => true,
+    'show_ui'               => true,
+    'show_in_menu'          => true,
+    'menu_position'         => 5,
+    'menu_icon'             => 'dashicons-list-view',
+    'show_in_admin_bar'     => true,
+    'show_in_nav_menus'     => true,
+    'can_export'            => true,
+    'has_archive'           => true,
+    'exclude_from_search'   => false,
+    'publicly_queryable'    => true,
+    'capability_type'       => 'page',
+  );
+  register_post_type( 'service', $args );
+
+}
+add_action( 'init', 'service_post_type', 0 );
+
+
+// Register Resources Post Type
+function resource_post_type() {
+
+  $labels = array(
+    'name'                  => _x( 'Resources', 'Post Type General Name', 'ith' ),
+    'singular_name'         => _x( 'Resource', 'Post Type Singular Name', 'ith' ),
+    'menu_name'             => __( 'Resources', 'ith' ),
+    'name_admin_bar'        => __( 'Resources', 'ith' )
+  );
+  $args = array(
+    'label'                 => __( 'Resource', 'ith' ),
+    'labels'                => $labels,
+    'supports'              => array( 'title', 'editor' ),
+    'hierarchical'          => false,
+    'public'                => true,
+    'show_ui'               => true,
+    'show_in_menu'          => true,
+    'menu_position'         => 5,
+    'show_in_admin_bar'     => true,
+    'show_in_nav_menus'     => true,
+    'can_export'            => true,
+    'has_archive'           => true,
+    'exclude_from_search'   => false,
+    'publicly_queryable'    => true,
+    'capability_type'       => 'page',
+  );
+  register_post_type( 'resource', $args );
+
+}
+add_action( 'init', 'resource_post_type', 0 );
