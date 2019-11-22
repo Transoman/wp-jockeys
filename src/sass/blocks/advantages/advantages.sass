@@ -1,0 +1,27 @@
+.advantages
+  padding-bottom: 0
+  +row-flex
+  &__item
+    +col
+    width: calc((100% / 12) * 4 - 70px)
+    margin-bottom: 7rem
+    font-size: 2.8rem
+    line-height: 1.17
+    +md-block
+      width: 100%
+      margin-bottom: vw(70)
+      font-size: vw(35)
+    p
+      &:last-child
+        margin-bottom: 0
+  &__title
+    @extend .section-title
+    padding-bottom: 1rem
+    margin-bottom: 3rem
+    border-color: $accent
+    border-width: 1.1rem
+    +md-block
+      display: inline-block
+      margin-bottom: vw(35)
+      padding-bottom: vw(15)
+      border-width: vw(11)

@@ -12,7 +12,7 @@ var settings = {
   },
   breakPoints: {
     lg: {
-      width: '1560px',
+      width: '1760px',
     },
     md: {
       width: '1230px',

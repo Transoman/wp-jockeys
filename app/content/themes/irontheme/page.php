@@ -15,8 +15,18 @@
 get_header();
 ?>
 
+  <section class="hero" style="background-image: url(<?php the_post_thumbnail_url( 'full' ); ?>);">
+    <div class="container">
+      <div class="hero__content">
+        <h2 class="hero__title"><?php the_title(); ?></h2>
+      </div>
+    </div>
+  </section>
+
   <div id="primary" class="content-area">
     <main id="main" class="site-main">
+
+      <?php get_template_part( 'template-parts/breadcrumb' ); ?>
 
     <?php
     while ( have_posts() ) :
@@ -36,5 +46,4 @@ get_header();
   </div><!-- #primary -->
 
 <?php
-get_sidebar();
 get_footer();

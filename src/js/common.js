@@ -95,6 +95,49 @@ jQuery(document).ready(function($) {
     }
   };
 
+  let options = {};
+
+  $('.team').each(function() {
+    if ($(this).find('.team__item').length > 4 || $(window).width() <= 1230) {
+
+      $(this).removeClass('disabled');
+
+      options = {
+        slidesPerView: 1,
+        spaceBetween: 70,
+        pagination: {
+          el: '.swiper-pagination',
+          type: 'bullets',
+          clickable: true
+        },
+        breakpoints: {
+          1231: {
+            slidesPerView: 4,
+          }
+        }
+      }
+    }
+    else {
+      $(this).addClass('disabled');
+
+      options = {
+        slidesPerView: 1,
+        spaceBetween: 70,
+        loop: false,
+        autoplay: false,
+        pagination: false,
+        simulateTouch: false,
+        breakpoints: {
+          1231: {
+            slidesPerView: 4,
+          }
+        }
+      }
+    }
+  });
+
+  new Swiper('.team', options);
+
   toggleNav();
   initModal();
   inputMask();
