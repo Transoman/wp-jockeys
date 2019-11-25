@@ -7,6 +7,10 @@
     margin-bottom: vw(80)
     &:last-child
       margin-bottom: 0
+  &:hover
+    .services-card
+      &__info
+        bottom: 3rem
   img
     width: 100%
   &__info
@@ -17,6 +21,7 @@
     padding: 2rem 3.5rem
     color: #fff
     clip-path: polygon(0 0, 93% 0, 100% 50%, 93% 100%, 0 100%)
+    +trans
     +md-block
       bottom: vw(30)
       width: 100%
