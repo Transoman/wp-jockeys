@@ -61,6 +61,7 @@
   +md-block
     display: block
   li
+    position: relative
     margin-right: 2.5rem
     +lg-block
       margin-right: 2rem
@@ -71,6 +72,25 @@
       margin-right: 0
       +md-block
         margin-bottom: 0
+    &:hover
+      & > .sub-menu
+        opacity: 1
+        visibility: visible
+    &.current-menu-item
+      a
+        position: relative
+        &::after
+          content: ''
+          position: absolute
+          bottom: -1rem
+          left: 0
+          right: 0
+          height: 0.5rem
+          background-color: $accent
+          +trans
+          +md-block
+            height: 0.2rem
+            bottom: -0.4rem
   a
     font-size: 2.3rem
     line-height: 1
@@ -79,6 +99,31 @@
     +md-block
       font-size: 1rem
       line-height: 1.3
+  .sub-menu
+    position: absolute
+    top: 100%
+    left: 0
+    z-index: 10
+    margin: 0
+    padding: 4rem 2.5rem 2.5rem
+    min-width: 30rem
+    list-style: none
+    background-color: rgba(#fff, 0.95)
+    opacity: 0
+    visibility: hidden
+    +trans
+    +md-block
+      position: static
+      padding: 0
+      margin: 0.8rem 0 0.8rem 0.8rem
+      opacity: 1
+      visibility: visible
+    li
+      margin-bottom: 2rem
+      +md-block
+        margin-bottom: 0.8rem
+      &:last-child
+        margin-bottom: 0
 
 
 .nav-toggle
@@ -130,16 +175,17 @@
         transform: rotate(-45deg)
 
 .nav-overlay
-  position: fixed
-  top: 0
-  right: 0
-  bottom: 0
-  left: 0
-  z-index: 9
-  background-color: rgba($main-color, 0.8)
-  opacity: 0
-  visibility: hidden
-  +trans
-  &.is-active
-    opacity: 1
-    visibility: visible
+  +md-block
+    position: fixed
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
+    z-index: 9
+    background-color: rgba($main-color, 0.8)
+    opacity: 0
+    visibility: hidden
+    +trans
+    &.is-active
+      opacity: 1
+      visibility: visible

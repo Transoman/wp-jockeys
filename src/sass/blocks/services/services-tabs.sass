@@ -1,0 +1,47 @@
+.services-tabs
+  margin-bottom: 6rem
+  +md-block
+    margin-bottom: vw(45)
+  &__response
+    min-height: 10rem
+    +md-block
+      min-height: vw(100)
+  &__item
+    &--services
+      padding-top: 8rem
+      +md-block
+        padding-top: vw(70)
+
+.services-tabs-list
+  margin: 0 -55px
+  padding: 0
+  list-style: none
+  display: flex
+  +md-block
+    margin-right: -25px
+    margin-left: -25px
+  li
+    width: calc(50% - 110px)
+    margin-right: 55px
+    margin-left: 55px
+    border-bottom: 1.2rem solid $gray-2
+    cursor: pointer
+    +trans
+    +md-block
+      width: calc(50% - 50px)
+      margin-right: 25px
+      margin-left: 25px
+      border-width: vw(12)
+    &:hover
+      a
+        color: $main-color
+    &.active
+      border-color: $blue
+      a
+        color: $main-color
+  a
+    font-size: 5.6rem
+    font-weight: 700
+    color: $gray-2
+    +md-block
+      font-size: vw(56)

@@ -1,0 +1,53 @@
+.resource-dropdown
+  position: relative
+  max-width: 46rem
+  margin: 4rem 0 2rem
+  +md-block
+    max-width: none
+    margin: vw(45) 0 vw(80)
+  &:hover
+    .resource-dropdown__body
+      opacity: 1
+      visibility: visible
+  &__head
+    padding-bottom: 2.5rem
+    font-size: 3.8rem
+    color: $gray-2
+    cursor: pointer
+    border-bottom: 0.2rem solid $gray-2
+    white-space: nowrap
+    text-overflow: ellipsis
+    overflow: hidden
+    +trans
+    +md-block
+      padding-bottom: vw(25)
+      font-size: vw(40)
+      border-width: vw(3)
+    &:hover
+      color: darken($gray-2, 15%)
+  &__body
+    position: absolute
+    top: 100%
+    left: 0
+    z-index: 10
+    display: flex
+    flex-direction: column
+    min-width: 40rem
+    padding: 2.5rem
+    background-color: rgba(#fff, 0.95)
+    opacity: 0
+    visibility: hidden
+    +trans
+    a
+      margin-bottom: 2rem
+      font-size: 3.8rem
+      color: $gray-2
+      line-height: 1
+      +md-block
+        font-size: vw(40)
+      &:last-child
+        margin-bottom: 0
+      &:hover
+        color: $main-color
+      &.active
+        color: $main-color

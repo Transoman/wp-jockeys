@@ -53,3 +53,8 @@ require get_template_directory() . '/inc/custom-post-type.php';
  * Custom Taxonomies
  */
 require get_template_directory() . '/inc/custom-taxonomies.php';
+
+/**
+ * Ajax
+ */
+require get_template_directory() . '/inc/ajax.php';

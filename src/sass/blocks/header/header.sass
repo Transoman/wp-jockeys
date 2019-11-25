@@ -1,7 +1,25 @@
 .header
   padding: 4rem 0
+  +trans
   +md-block
-    padding: 5.99vw 0
+    padding: vw(55) 0
+  &.fixed
+    position: fixed
+    top: 0
+    left: 0
+    right: 0
+    z-index: 10
+    padding: 2rem 0 3rem
+    background: #fff
+    box-shadow: 0 0 10px rgba(#000, 0.1)
+    +md-block
+      padding: vw(20) 0
+  &.nav-up
+    top: -20rem
+    +md-block
+      top: - vw(240)
+  &.nav-down
+    top: 0
   .container
     position: relative
     display: flex

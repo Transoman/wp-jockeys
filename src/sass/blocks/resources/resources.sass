@@ -1,0 +1,105 @@
+@import 'resource-dropdown'
+
+.resources-video-list
+  display: flex
+  flex-wrap: wrap
+  margin: 0 -55px
+  &__item
+    width: calc(50% - 110px)
+    margin-right: 55px
+    margin-left: 55px
+    margin-bottom: 4.5rem
+    +md-block
+      width: 100%
+      margin-bottom: 7.6vw
+    .embed-container
+      position: relative
+      padding-bottom: 56.25%
+      overflow: hidden
+      max-width: 100%
+      height: auto
+      iframe,
+      object,
+      embed
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+  &__title
+    margin-top: 2rem
+    margin-bottom: 0
+    font-size: 3.7rem
+    +md-block
+      font-size: vw(43)
+      margin-top: vw(30)
+
+.resources-file-list
+  +row-flex
+  &__item
+    +col
+    width: calc((100% / 12) * 4 - 70px)
+    @extend .news-card
+    +md-block
+      width: 100%
+    .btn
+      align-self: flex-start
+  &__img-wrap
+    @extend .news-card__img-wrap
+    position: relative
+  &__icon
+    position: absolute
+    bottom: 6.5rem
+    right: 0
+    padding: 1.5rem 2rem
+    background-color: $gray-light
+    +md-block
+      bottom: 50%
+      transform: translateY(50%)
+      padding: vw(25) vw(35)
+    svg
+      width: 6.5rem
+      height: 8.5rem
+      fill: #191a19
+      +md-block
+        width: vw(110)
+        height: vw(150)
+  &__title
+    @extend .news-card__title
+
+.resource-links
+  +md-block
+    margin-top: vw(100)
+  h3
+    margin-bottom: 2.5rem
+    font-size: 3.6rem
+    +md-block
+      margin-bottom: vw(30)
+      font-size: vw(43)
+  &__item
+    margin-bottom: 2.5rem
+    +md-block
+      margin-bottom: vw(25)
+    &:last-child
+      margin-bottom: 0
+    a
+      display: inline-flex
+      flex-direction: column
+      align-items:
+      line-height: 1.3
+      &:hover, &:focus
+        .resource-links
+          &__title
+            text-decoration: none
+  &__title
+    font-size: 3.8rem
+    font-weight: 700
+    text-decoration: underline
+    color: $main-color
+    +md-block
+      font-size: vw(38)
+  &__url
+    font-size: 2.8rem
+    color: $accent
+    +md-block
+      font-size: vw(34)

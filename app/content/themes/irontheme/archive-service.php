@@ -15,14 +15,7 @@
 
       <div class="form-search">
         <h2>How can we help?</h2>
-        <form action="<?php echo home_url( '/' );?>" method="get" class="form-search__form">
-          <div class="form-group">
-            <input type="text" name="s" class="form-field" placeholder="search">
-            <button type="submit" class="form-search__btn">
-              <?php ith_the_icon( 'search', 'form-search__btn-icon' ); ?>
-            </button>
-          </div>
-        </form>
+        <?php get_template_part( 'template-parts/search', 'form' ); ?>
       </div>
 
       <?php
@@ -39,9 +32,7 @@
 
               <div class="services-card__info" style="background-color: <?php the_field( 'color', $cat ); ?>;">
                 <h3 class="services-card__title"><?php echo $cat->name; ?></h3>
-                <?php if ($cat->description): ?>
-                  <?php echo apply_filters( 'the_content', $cat->description ); ?>
-                <?php endif; ?>
+                <?php the_field( 'short_description', $cat ); ?>
               </div>
             </a>
           <?php endforeach; ?>

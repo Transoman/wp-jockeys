@@ -11,3 +11,33 @@
   +smooth-scroll
   table
     white-space: nowrap
+
+#response
+  position: relative
+  &::after
+    content: ''
+    position: absolute
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
+    background-color: rgba(#fff, 0.8)
+    backdrop-filter: blur(3px)
+    opacity: 0
+    visibility: hidden
+    +trans
+  &.active
+    &::after
+      opacity: 1
+      visibility: visible
+
+.file-block
+  margin-top: 4rem
+  +md-block
+    margin-top: vw(40)
+  a
+    span
+      font-size: 1.75rem
+      color: $gray
+      +md-block
+        font-size: vw(26)

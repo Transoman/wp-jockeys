@@ -1,4 +1,5 @@
 @import 'services-card'
+@import 'services-tabs'
 
 .services-cat
   +row-flex
@@ -10,3 +11,11 @@
     &--last
       .get-in-touch
         padding: 0
+
+.services-list
+  +row-flex
+  .news-card
+    +col
+    width: calc((100% / 12) * 4 - 70px)
+    +md-block
+      width: 100%

@@ -15,7 +15,7 @@
 <body <?php body_class(); ?>>
 
 <div class="wrapper">
-  <header class="header">
+  <header class="header nav-down">
     <div class="container">
       <div class="header__left">
         <div class="logo header__logo">

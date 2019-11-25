@@ -31,8 +31,8 @@
             "key": "field_5dd7c10a10444",
             "label": "Video link",
             "name": "video_link",
-            "type": "url",
-            "instructions": "Youtube, Vimeo",
+            "type": "oembed",
+            "instructions": "",
             "required": 0,
             "conditional_logic": [
                 [
@@ -48,8 +48,8 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
-            "placeholder": ""
+            "width": "",
+            "height": ""
         },
         {
             "key": "field_5dd7c15c10445",
@@ -104,7 +104,7 @@
                 "class": "",
                 "id": ""
             },
-            "return_format": "url",
+            "return_format": "array",
             "library": "all",
             "min_size": "",
             "max_size": "",
@@ -128,5 +128,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1574420882
+    "modified": 1574685913
 }

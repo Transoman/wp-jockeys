@@ -70,14 +70,26 @@ get_header(); ?>
                 <?php if (have_rows( 'list' )): ?>
                   <div class="team swiper-container">
                     <div class="swiper-wrapper">
-                      <?php while (have_rows( 'list' )): the_row(); ?>
+                      <?php while (have_rows( 'list' )): the_row();
+                      $id = str_replace( [' '], '-', strtolower( get_sub_field( 'name' ) ) ); ?>
                         <div class="team__item swiper-slide">
                           <div class="team__img-wrap">
                             <?php echo wp_get_attachment_image( get_sub_field( 'photo' ), 'medium' ); ?>
                           </div>
                           <h3 class="team__name"><?php the_sub_field( 'name' ); ?></h3>
                           <p class="team__position"><?php the_sub_field( 'position' ); ?></p>
-                          <a href="#" class="team__more">read bio ></a>
+                          <a href="javascript:;" data-src="#team-modal-<?php echo $id; ?>" class="team__more">read bio ></a>
+
+                          <div style="display: none;" class="team-modal" id="team-modal-<?php echo $id; ?>">
+                            <div class="team__img-wrap">
+                              <?php echo wp_get_attachment_image( get_sub_field( 'photo' ), 'medium' ); ?>
+                            </div>
+                            <h3 class="team__name"><?php the_sub_field( 'name' ); ?></h3>
+                            <p class="team__position"><?php the_sub_field( 'position' ); ?></p>
+                            <div class="team__text">
+                              <?php the_sub_field( 'text' ); ?>
+                            </div>
+                          </div>
                         </div>
                       <?php endwhile; ?>
                     </div>

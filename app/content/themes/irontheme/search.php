@@ -15,14 +15,14 @@ get_header();
 
     <?php if ( have_posts() ) : ?>
 
-      <header class="page-header">
-        <h1 class="page-title">
-          <?php
-          /* translators: %s: search query. */
-          printf( esc_html__( 'Search Results for: %s', 'mytheme' ), '<span>' . get_search_query() . '</span>' );
-          ?>
-        </h1>
-      </header><!-- .page-header -->
+    <section>
+      <h1 class="section-title">
+        <?php
+        /* translators: %s: search query. */
+        printf( esc_html__( 'Search Results for: %s', 'mytheme' ), '<span>' . get_search_query() . '</span>' );
+        ?>
+      </h1>
+
 
       <?php
       /* Start the Loop */
@@ -46,10 +46,11 @@ get_header();
 
     endif;
     ?>
+    </section>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea ipsam labore, minima optio pariatur tempora ut! At aut cupiditate eius impedit rem sit sunt totam? Blanditiis, nisi repellendus. Explicabo, impedit?
 
     </main><!-- #main -->
   </section><!-- #primary -->
 
 <?php
-get_sidebar();
 get_footer();
