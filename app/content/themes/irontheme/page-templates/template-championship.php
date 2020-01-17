@@ -29,9 +29,9 @@ get_header(); ?>
 
           <div class="championship">
             <h3 class="championship__title">Championships</h3>
-            <div class="resource-dropdown">
-              <div class="resource-dropdown__head">Choose your championship</div>
-              <div class="resource-dropdown__body">
+            <div class="filter-dropdown">
+              <div class="filter-dropdown__head">Choose your championship</div>
+              <div class="filter-dropdown__body">
                 <a href="#" data-term-id="">Jockeys Championships Overview</a>
                 <a href="#" data-term-id="">The Flat Jockeys Championship 2019</a>
                 <a href="#" data-term-id="">The Jump Jockeys Championship 2019/20</a>

@@ -109,3 +109,36 @@ function resource_filter() {
 }
 add_action('wp_ajax_resource_filter', 'resource_filter');
 add_action('wp_ajax_nopriv_resource_filter', 'resource_filter');
+
+
+function news_filter() {
+  if ( isset( $_POST['news_type'] ) && $_POST['news_type'] != '' ):
+
+	  $paged = $_POST['paged'] ? $_POST['paged'] : 1;
+
+    $args = array(
+      'post_type' => 'news',
+      'post_status' => 'publish',
+      'paged' => $paged,
+      'meta_query' => array(
+        array(
+          'key' => 'news_type',
+          'value' => array( $_POST['news_type'] )
+        )
+      )
+    );
+
+    $news = new WP_Query( $args );
+
+    if ($news->have_posts()) {
+	    while( $news->have_posts() ): $news->the_post();
+		    get_template_part( 'template-parts/news', 'card' );
+	    endwhile;
+	    wp_reset_postdata();
+    }
+
+  endif;
+  die();
+}
+add_action('wp_ajax_news_filter', 'news_filter');
+add_action('wp_ajax_nopriv_news_filter', 'news_filter');

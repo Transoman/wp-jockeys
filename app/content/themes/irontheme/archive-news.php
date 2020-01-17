@@ -17,7 +17,16 @@
         <section class="last-news">
           <h2 class="section-title">Latest news</h2>
 
-          <div class="last-news__list">
+          <div class="filter-dropdown filter-news">
+            <div class="filter-dropdown__head">News Type</div>
+            <div class="filter-dropdown__body">
+              <a href="#" data-news-type="general">General News</a>
+              <a href="#" data-news-type="statement">Statements/Reports</a>
+              <a href="#" data-news-type="pja">PJA Newsletters</a>
+            </div>
+          </div>
+
+          <div class="last-news__list" id="response">
             <?php
             while ( have_posts() ):
               the_post();

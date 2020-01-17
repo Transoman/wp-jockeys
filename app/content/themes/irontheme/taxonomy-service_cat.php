@@ -64,9 +64,9 @@ $term_obj = get_queried_object(); ?>
           ) );
 
           if ($resource_term): ?>
-            <div class="resource-dropdown">
-              <div class="resource-dropdown__head">Refine resources</div>
-              <div class="resource-dropdown__body">
+            <div class="filter-dropdown filter-resource">
+              <div class="filter-dropdown__head">Refine resources</div>
+              <div class="filter-dropdown__body">
                 <?php foreach ($resource_term as $item): ?>
                   <a href="#" data-term-id="<?php echo $item->term_id; ?>"><?php echo $item->name; ?></a>
                 <?php endforeach; ?>

@@ -98,55 +98,38 @@ jQuery(document).ready(function($) {
   };
 
   if ($('.team').length) {
-    let options = {};
 
-    $('.team').each(function() {
-      if ($(this).find('.team__item').length > 4 || $(window).width() <= 1230) {
+    $('.team').each(function(i, el) {
 
-        $(this).removeClass('disabled');
+      let $this = $(this);
+      $this.addClass("team-" + i);
+      $this.parent().find(".swiper-pagination").addClass("swiper-pagination-" + i);
 
-        options = {
-          slidesPerView: 1,
-          spaceBetween: 70,
-          pagination: {
-            el: '.swiper-pagination',
-            type: 'bullets',
-            clickable: true
-          },
-          breakpoints: {
-            1231: {
-              slidesPerView: 4,
-            }
+      let pagination = '.swiper-pagination-' + i;
+
+      new Swiper('.team-' + i, {
+        slidesPerView: 1,
+        spaceBetween: 70,
+        watchOverflow: true,
+        pagination: {
+          el: pagination,
+          type: 'bullets',
+          clickable: true
+        },
+        breakpoints: {
+          1231: {
+            slidesPerView: 4,
           }
         }
-      }
-      else {
-        $(this).addClass('disabled');
-
-        options = {
-          slidesPerView: 1,
-          spaceBetween: 70,
-          loop: false,
-          autoplay: false,
-          pagination: false,
-          simulateTouch: false,
-          breakpoints: {
-            1231: {
-              slidesPerView: 4,
-            }
-          }
-        }
-      }
+      });
     });
-
-    new Swiper('.team', options);
   }
 
   $('.services-tabs').tabslet({
     animation: true
   });
 
-  $('body').on('click', '.resource-dropdown__body a', function(e) {
+  $('body').on('click', '.filter-resource .filter-dropdown__body a', function(e) {
     e.preventDefault();
     let id = $(this).data('term-id');
     let val = $(this).text();
@@ -154,7 +137,7 @@ jQuery(document).ready(function($) {
 
     $(this).siblings().removeClass('active');
     $(this).addClass('active');
-    $('.resource-dropdown__head').text(val);
+    $('.filter-dropdown__head').text(val);
 
     $.ajax({
       type: "POST",
@@ -162,6 +145,33 @@ jQuery(document).ready(function($) {
       data : {
         action : 'resource_filter',
         id: id
+      },
+      beforeSend: function() {
+        response.addClass('active');
+      },
+      success: function (data) {
+        response.html(data);
+        response.removeClass('active');
+      }
+    });
+  });
+
+  $('body').on('click', '.filter-news .filter-dropdown__body a', function(e) {
+    e.preventDefault();
+    let newsType = $(this).data('news-type');
+    let val = $(this).text();
+    let response = $('#response');
+
+    $(this).siblings().removeClass('active');
+    $(this).addClass('active');
+    $('.filter-dropdown__head').text(val);
+
+    $.ajax({
+      type: "POST",
+      url: window.wp_data.ajax_url,
+      data : {
+        action : 'news_filter',
+        news_type: newsType
       },
       beforeSend: function() {
         response.addClass('active');

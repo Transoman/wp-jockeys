@@ -1,0 +1,103 @@
+{
+    "key": "group_5e21c7a0c7150",
+    "title": "News",
+    "fields": [
+        {
+            "key": "field_5e21c7a92d3ee",
+            "label": "News Type",
+            "name": "news_type",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "general": "General News",
+                "statement": "Statements\/Reports",
+                "pja": "PJA Newsletters"
+            },
+            "default_value": [
+                "general"
+            ],
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_5e21c7f82d3ef",
+            "label": "Statements\/Reports",
+            "name": "statements",
+            "type": "file",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5e21c7a92d3ee",
+                        "operator": "==",
+                        "value": "statement"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "url",
+            "library": "all",
+            "min_size": "",
+            "max_size": "",
+            "mime_types": "pdf"
+        },
+        {
+            "key": "field_5e21c83e2d3f0",
+            "label": "PJA Newsletters",
+            "name": "pja_newsletters",
+            "type": "url",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5e21c7a92d3ee",
+                        "operator": "==",
+                        "value": "pja"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "news"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1579274086
+}
