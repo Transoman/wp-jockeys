@@ -67,34 +67,53 @@ get_header(); ?>
                   <h2 class="section-title"><?php echo $title; ?></h2>
                 <?php endif; ?>
 
-                <?php if (have_rows( 'list' )): ?>
+                <?php
+                $args = array(
+                  'post_type' => 'teams',
+                  'tax_query' => array(
+                    array(
+	                    'taxonomy' => 'team_category',
+	                    'field' => 'term_id',
+	                    'terms' => get_sub_field( 'teams_category' )
+                    )
+                  )
+                );
+
+                $teams = new WP_Query( $args );
+
+                if ($teams->have_posts()):
+                ?>
+
                   <div class="team swiper-container">
                     <div class="swiper-wrapper">
-                      <?php while (have_rows( 'list' )): the_row();
-                      $id = str_replace( [' '], '-', strtolower( get_sub_field( 'name' ) ) ); ?>
-                        <div class="team__item swiper-slide">
-                          <div class="team__img-wrap">
-                            <?php echo wp_get_attachment_image( get_sub_field( 'photo' ), 'medium' ); ?>
+			                <?php while ($teams->have_posts()): $teams->the_post();
+				                $id = get_post_field('post_name'); ?>
+
+                        <div class="team-card swiper-slide">
+                          <div class="team-card__img-wrap">
+						                <?php the_post_thumbnail( 'medium' ); ?>
                           </div>
-                          <h3 class="team__name"><?php the_sub_field( 'name' ); ?></h3>
-                          <p class="team__position"><?php the_sub_field( 'position' ); ?></p>
-                          <a href="javascript:;" data-src="#team-modal-<?php echo $id; ?>" class="team__more">read bio ></a>
+                          <h3 class="team-card__name"><?php the_title(); ?></h3>
+                          <p class="team-card__position"><?php the_field( 'position' ); ?></p>
+                          <a href="javascript:;" data-src="#team-modal-<?php echo $id; ?>" class="team-card__more">read bio ></a>
 
                           <div style="display: none;" class="team-modal" id="team-modal-<?php echo $id; ?>">
-                            <div class="team__img-wrap">
-                              <?php echo wp_get_attachment_image( get_sub_field( 'photo' ), 'medium' ); ?>
+                            <div class="team-card__img-wrap">
+							                <?php the_post_thumbnail( 'medium' ); ?>
                             </div>
-                            <h3 class="team__name"><?php the_sub_field( 'name' ); ?></h3>
-                            <p class="team__position"><?php the_sub_field( 'position' ); ?></p>
-                            <div class="team__text">
-                              <?php the_sub_field( 'text' ); ?>
+                            <h3 class="team-card__name"><?php the_title(); ?></h3>
+                            <p class="team-card__position"><?php the_field( 'position' ); ?></p>
+                            <div class="team-card__text">
+							                <?php the_content(); ?>
                             </div>
                           </div>
                         </div>
-                      <?php endwhile; ?>
+
+			                <?php endwhile; wp_reset_postdata(); ?>
                     </div>
                     <div class="swiper-pagination"></div>
                   </div>
+
                 <?php endif; ?>
               </section>
 

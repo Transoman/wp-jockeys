@@ -4,10 +4,14 @@ let svg4everybody = require('svg4everybody'),
   iMask = require('imask'),
   Swiper = require('swiper'),
   tabslet = require('tabslet'),
-  fancybox = require('@fancyapps/fancybox');
-
+  fancybox = require('@fancyapps/fancybox'),
+  jQueryBridget = require('jquery-bridget'),
+  Isotope = require('isotope-layout'),
+  matchHeight = require('jquery-match-height-browserify');
 
 jQuery(document).ready(function($) {
+  jQueryBridget( 'isotope', Isotope, $ );
+
   // Toggle nav menu
   let toggleNav = function () {
     let toggle = $('.nav-toggle');
@@ -185,7 +189,7 @@ jQuery(document).ready(function($) {
 
   $('.blocks-gallery-item a').fancybox().attr('data-fancybox', 'gallery');
 
-  $('.team__more').fancybox().attr('data-fancybox', 'group');
+  $('.team-card__more').fancybox().attr('data-fancybox', 'group');
 
   // Fixed header
   let fixedHeader = function(e) {
@@ -240,6 +244,35 @@ jQuery(document).ready(function($) {
 
     lastScrollTop = st;
   }
+
+  // Filtering isotop
+  $(window).on('load', function () {
+    let $grid = $('.team-list').isotope({
+      itemSelector: '.team-list .team-card',
+      horizontalOrder: true,
+      fitWidth: true,
+      layoutMode: 'masonry',
+      filter: $('.team-filter__btn.is-checked').data('filter')
+    });
+
+    // bind filter button click
+    $('.team-filter').on( 'click', 'button', function() {
+      let filterValue = $( this ).attr('data-filter');
+      $grid.isotope({ filter: filterValue });
+    });
+
+    // change is-checked class on buttons
+    $('.team-filter').each( function( i, buttonGroup ) {
+      let $buttonGroup = $( buttonGroup );
+      $buttonGroup.on( 'click', 'button', function() {
+        $buttonGroup.find('.is-checked').removeClass('is-checked');
+        $( this ).addClass('is-checked');
+      });
+    });
+
+  });
+
+  $('.partners-card__img').matchHeight();
 
   fixedHeader($(this));
 

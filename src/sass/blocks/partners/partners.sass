@@ -1,3 +1,5 @@
+@import 'partners-card'
+
 .partners
   +row-flex
   align-items: center
@@ -12,16 +14,11 @@
       &:last-child
         margin-bottom: 0
   &--page
+    align-items: stretch
     margin-top: 10rem
     +md-block
       margin-top: 0
-    .partners
-      &__item
-        width: calc((100% / 3) - 70px)
-        flex-grow: 1
-        margin-bottom: 11rem
-        +md-block
-          width: 100%
-          margin-bottom: 10.86vw
-          &:last-child
-            margin-bottom: 0
+    .partners-card
+      +col
+      +size(3)
+      +size-md(12)
