@@ -36,55 +36,56 @@ get_header(); ?>
 						?>
 						<div class="course">
 							<?php foreach ($terms as $term): ?>
-								<div class="course__item">
-									<h3 class="course__title"><?php echo $term->name; ?></h3>
-
-									<?php if (term_description($term)): ?>
-										<div class="course__descr">
-											<?php echo term_description($term); ?>
-										</div>
-									<?php endif; ?>
-
-									<?php $args = array(
-										'post_type'   => 'courses',
-										'numberposts' => -1,
-										'orderby' => 'meta_value',
-										'meta_key' => 'date',
-										'order' => 'ASC',
-										'tax_query'   => array(
-											array(
-												'taxonomy' => 'course_category',
-												'field' => 'term_id',
-												'terms' => $term->term_id
-											)
+								<?php $args = array(
+									'post_type'   => 'courses',
+									'numberposts' => -1,
+									'orderby' => 'meta_value',
+									'meta_key' => 'date',
+									'order' => 'ASC',
+									'tax_query'   => array(
+										array(
+											'taxonomy' => 'course_category',
+											'field' => 'term_id',
+											'terms' => $term->term_id
 										)
-									);
+									)
+								);
 
-									$posts = get_posts( $args );
+								$posts = get_posts( $args );
 
-									if ($posts): ?>
-										<ul class="course-list">
-											<?php foreach ( $posts as $post ): setup_postdata($post); ?>
-												<?php $now_time = time();
-												$time = strtotime(get_field( 'date' ));
+								if ($posts): ?>
+                  <div class="course__item">
+                    <h3 class="course__title"><?php echo $term->name; ?></h3>
 
-												if ($now_time >= $time) {
-													wp_delete_post(get_the_ID());
-													continue;
-												}
+                    <?php if (term_description($term)): ?>
+                      <div class="course__descr">
+                        <?php echo term_description($term); ?>
+                      </div>
+                    <?php endif; ?>
 
-												?>
-												<li class="course-list__item">
-										<span class="course-list__date">
-											<?php
-											echo date( 'M j', $time ); ?>
-										</span>
-													<span class="course-list__title"><?php the_title(); ?></span>
-												</li>
-											<?php endforeach; wp_reset_postdata(); ?>
-										</ul>
-									<?php endif; ?>
-								</div>
+                      <ul class="course-list">
+                        <?php foreach ( $posts as $post ): setup_postdata($post); ?>
+                          <?php $now_time = time();
+                          $time = strtotime(get_field( 'date' ));
+                          $end_time = strtotime( "tomorrow", $time ) - 1;
+
+                          if ($now_time >= $end_time) {
+                            wp_delete_post(get_the_ID());
+                            continue;
+                          }
+
+                          ?>
+                          <li class="course-list__item">
+                            <span class="course-list__date">
+                              <?php
+                              echo date( 'M j', $time ); ?>
+                            </span>
+                            <span class="course-list__title"><?php the_title(); ?></span>
+                          </li>
+                        <?php endforeach; wp_reset_postdata(); ?>
+                      </ul>
+                  </div>
+								<?php endif; ?>
 							<?php endforeach; ?>
 						</div>
 					<?php endif; ?>
