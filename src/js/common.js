@@ -77,6 +77,16 @@ jQuery(document).ready(function($) {
 
   // Table show
   let showMoreRow = function() {
+    let btnHtml = '<tfoot>\n' +
+      '              <tr>\n' +
+      '                <td colspan="8">\n' +
+      '                  <a href="#" class="championship-table__more">More...</a>\n' +
+      '                </td>\n' +
+      '              </tr>\n' +
+      '              </tfoot>';
+
+    $('.championship-table table').append(btnHtml);
+
     let btnMore = $('.championship-table__more');
 
     if (btnMore) {
@@ -90,7 +100,7 @@ jQuery(document).ready(function($) {
           x += 10;
           table.find('tbody tr').slice(0, x).slideDown();
           if (x >= tr_size){
-            $(this).hide();
+            $(this).parents('tfoot').hide();
           }
 
           if ($('.championship-slider').length) {

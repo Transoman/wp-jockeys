@@ -16,7 +16,8 @@
     "wpackagist-plugin/contact-form-7": "*",
     "wpackagist-plugin/w3dev-fancybox": "*",
     "wpackagist-plugin/all-in-one-wp-migration": "*",
-    "wpackagist-plugin/taxonomy-terms-order": "*"
+    "wpackagist-plugin/taxonomy-terms-order": "*",
+    "wpackagist-plugin/acf-archive": "*"
   },
   "extra": {
     "wordpress-install-dir": "app/wp",

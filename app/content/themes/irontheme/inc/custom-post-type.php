@@ -65,41 +65,6 @@ function partner_post_type() {
 }
 add_action( 'init', 'partner_post_type', 0 );
 
-
-// Register Event Post Type
-function event_post_type() {
-
-  $labels = array(
-    'name'                  => _x( 'Events', 'Post Type General Name', 'ith' ),
-    'singular_name'         => _x( 'Event', 'Post Type Singular Name', 'ith' ),
-    'menu_name'             => __( 'Events', 'ith' ),
-    'name_admin_bar'        => __( 'Events', 'ith' ),
-    'archives'              => __( 'Events', 'ith' )
-  );
-  $args = array(
-    'label'                 => __( 'Event', 'ith' ),
-    'labels'                => $labels,
-    'supports'              => array( 'title', 'editor', 'thumbnail' ),
-    'hierarchical'          => false,
-    'public'                => true,
-    'show_ui'               => true,
-    'show_in_menu'          => true,
-    'menu_position'         => 5,
-    'menu_icon'             => 'dashicons-location-alt',
-    'show_in_admin_bar'     => true,
-    'show_in_nav_menus'     => true,
-    'can_export'            => true,
-    'has_archive'           => true,
-    'exclude_from_search'   => false,
-    'publicly_queryable'    => true,
-    'capability_type'       => 'page',
-    'show_in_rest'          => true
-  );
-  register_post_type( 'event', $args );
-
-}
-add_action( 'init', 'event_post_type', 0 );
-
 // Register Service Post Type
 function service_post_type() {
 
@@ -232,3 +197,36 @@ function courses_post_type() {
 
 }
 add_action( 'init', 'courses_post_type', 0 );
+
+// Register Championships Type
+function championships_post_type() {
+
+	$labels = array(
+		'name'                  => _x( 'Championships', 'Post Type General Name', 'ith' ),
+		'singular_name'         => _x( 'Championship', 'Post Type Singular Name', 'ith' ),
+		'menu_name'             => __( 'Championships', 'ith' ),
+		'name_admin_bar'        => __( 'Championships', 'ith' ),
+		'archives'              => __( 'Championships', 'ith' )
+	);
+	$args = array(
+		'label'                 => __( 'Championship', 'ith' ),
+		'labels'                => $labels,
+		'supports'              => array( 'title', 'editor', 'thumbnail' ),
+		'hierarchical'          => false,
+		'public'                => true,
+		'show_ui'               => true,
+		'show_in_menu'          => true,
+		'menu_position'         => 5,
+		'show_in_admin_bar'     => true,
+		'show_in_nav_menus'     => true,
+		'can_export'            => true,
+		'has_archive'           => true,
+		'exclude_from_search'   => false,
+		'publicly_queryable'    => true,
+		'capability_type'       => 'page',
+		'show_in_rest'          => true
+	);
+	register_post_type( 'championships', $args );
+
+}
+add_action( 'init', 'championships_post_type', 0 );

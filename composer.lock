@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5a23319f5d0a38cd21ffe997bf9b07da",
+    "content-hash": "87b1310a8e3e8b1b196120ae7234c5d3",
     "packages": [
         {
             "name": "composer/installers",
@@ -257,16 +257,36 @@
             "time": "2018-11-09T20:10:38+00:00"
         },
         {
-            "name": "wpackagist-plugin/all-in-one-wp-migration",
-            "version": "7.14",
+            "name": "wpackagist-plugin/acf-archive",
+            "version": "1.0.5",
             "source": {
                 "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/all-in-one-wp-migration/",
-                "reference": "tags/7.14"
+                "url": "https://plugins.svn.wordpress.org/acf-archive/",
+                "reference": "tags/1.0.5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/all-in-one-wp-migration.7.14.zip",
+                "url": "https://downloads.wordpress.org/plugin/acf-archive.1.0.5.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/acf-archive/"
+        },
+        {
+            "name": "wpackagist-plugin/all-in-one-wp-migration",
+            "version": "7.15",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/all-in-one-wp-migration/",
+                "reference": "tags/7.15"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/all-in-one-wp-migration.7.15.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -278,7 +298,7 @@
         },
         {
             "name": "wpackagist-plugin/clearfy",
-            "version": "1.6.2",
+            "version": "1.6.3",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/clearfy/",
@@ -286,7 +306,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/clearfy.zip?timestamp=1574233094",
+                "url": "https://downloads.wordpress.org/plugin/clearfy.zip?timestamp=1579645037",
                 "reference": null,
                 "shasum": null
             },
@@ -418,15 +438,15 @@
         },
         {
             "name": "wpackagist-plugin/wordpress-seo",
-            "version": "12.8.1",
+            "version": "12.9.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wordpress-seo/",
-                "reference": "tags/12.8.1"
+                "reference": "tags/12.9.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.12.8.1.zip",
+                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.12.9.1.zip",
                 "reference": null,
                 "shasum": null
             },

@@ -1,0 +1,32 @@
+.useful-list
+  +row-flex
+  &__item
+    +col
+    +size(3)
+    +size-lg(4)
+    +size-md(12)
+    display: flex
+    flex-direction: column
+    margin-bottom: 70px
+    padding: 15px 20px
+    box-shadow: 0 0 10px rgba(#000, 0.1)
+    text-align: center
+    +trans
+    +md-block
+      margin-bottom: vw(50)
+      padding: 15px
+    &:hover
+      box-shadow: 0 0 30px rgba(#000, 0.15)
+  &__title
+    margin-bottom: 30px
+    font-size: 2.5rem
+    +md-block
+      font-size: vw(50)
+  &__img
+    display: flex
+    align-items: center
+    flex-grow: 1
+    max-width: 150px
+    margin: 0 auto 30px
+  &__tel
+    margin-top: auto
