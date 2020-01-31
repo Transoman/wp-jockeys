@@ -115,8 +115,8 @@ $term_obj = get_queried_object(); ?>
               'meta_query' => array(
                 array(
                   'key' => 'post_type',
-                  'value' => 'file',
-                  'compare' => '='
+                  'value' => 'video',
+                  'compare' => '!='
                 )
               )
             );
@@ -127,15 +127,31 @@ $term_obj = get_queried_object(); ?>
 
               <div class="resources-file-list">
                 <?php while ($res_file->have_posts()): $res_file->the_post(); ?>
+	                <?php $type = get_field( 'post_type' ); ?>
                   <div class="resources-file-list__item">
                     <div class="resources-file-list__img-wrap">
                       <?php echo wp_get_attachment_image( get_field( 'thumbnail' ), 'post-card' ); ?>
                       <div class="resources-file-list__icon">
-                        <?php ith_the_icon( 'document' ); ?>
+                        <?php if ($type == 'file'): ?>
+                          <?php ith_the_icon( 'document' ); ?>
+                        <?php elseif ($type == 'link'): ?>
+	                        <?php ith_the_icon( 'foreign' ); ?>
+                        <?php endif; ?>
                       </div>
                     </div>
-                    <h3 class="resources-file-list__title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-                    <a href="<?php the_permalink(); ?>" class="btn">read more ></a>
+
+                    <?php
+                    $url = null;
+                    if ($type == 'file' && get_field( 'file' )) {
+                      $url = get_field( 'file' )['url'];
+                    }
+                    elseif ($type == 'link' && get_field( 'link' )) {
+	                    $url = get_field( 'link' );
+                    }
+                    ?>
+
+                    <h3 class="resources-file-list__title"><a href="<?php echo $url; ?>" target="_blank"><?php the_title(); ?></a></h3>
+                    <a href="<?php echo $url; ?>" target="_blank" class="btn">read more ></a>
                   </div>
                 <?php endwhile; wp_reset_postdata(); ?>
               </div>

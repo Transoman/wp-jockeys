@@ -27,23 +27,43 @@
 
       </section>
 
-    <?php $args = array(
-      'post_type' => 'service',
-      'posts_per_page' => 3,
-      'post_status' => 'publish',
-      'order' => 'ASC',
-      'post__not_in' => array( get_the_ID() )
-    );
+    <?php
+      $posts = get_field( 'resource_key' );
 
-    $similar = new WP_Query( $args );
+      if ($posts): ?>
 
-    if ($similar->have_posts()): ?>
+        <h2 class="section-title">Key resources</h2>
 
-    <div class="similar-post">
-      <?php while ($similar->have_posts()): $similar->the_post();
-        get_template_part( 'template-parts/news', 'card' );
-      endwhile; wp_reset_postdata(); ?>
-    </div>
+        <div class="resources-file-list">
+	      <?php foreach( $posts as $post): ?>
+		      <?php setup_postdata($post); ?>
+		      <?php $type = get_field( 'post_type' ); ?>
+            <div class="resources-file-list__item">
+              <div class="resources-file-list__img-wrap">
+					      <?php echo wp_get_attachment_image( get_field( 'thumbnail' ), 'post-card' ); ?>
+                <div class="resources-file-list__icon">
+	                <?php if ($type == 'file'): ?>
+		                <?php ith_the_icon( 'document' ); ?>
+	                <?php elseif ($type == 'link'): ?>
+		                <?php ith_the_icon( 'foreign' ); ?>
+	                <?php endif; ?>
+                </div>
+              </div>
+
+	            <?php
+	            $url = null;
+	            if ($type == 'file' && get_field( 'file' )) {
+		            $url = get_field( 'file' )['url'];
+	            }
+              elseif ($type == 'link' && get_field( 'link' )) {
+		            $url = get_field( 'link' );
+	            }
+	            ?>
+
+              <h3 class="resources-file-list__title"><a href="<?php echo $url; ?>" target="_blank"><?php the_title(); ?></a></h3>
+            </div>
+		      <?php endforeach; wp_reset_postdata(); ?>
+        </div>
 
     <?php endif;
 

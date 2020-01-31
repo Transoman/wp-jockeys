@@ -16,6 +16,7 @@ function service_cat_taxonomy() {
     'show_admin_column'          => true,
     'show_in_nav_menus'          => true,
     'show_tagcloud'              => true,
+    'show_in_rest'               => true
   );
   register_taxonomy( 'service_cat', array( 'service' ), $args );
 
@@ -38,6 +39,7 @@ function resource_cat_taxonomy() {
     'show_admin_column'          => true,
     'show_in_nav_menus'          => true,
     'show_tagcloud'              => true,
+    'show_in_rest'               => true
   );
   register_taxonomy( 'resource_cat', array( 'resource' ), $args );
 

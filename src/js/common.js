@@ -200,6 +200,7 @@ jQuery(document).ready(function($) {
   $('.blocks-gallery-item a').fancybox().attr('data-fancybox', 'gallery');
 
   $('.team-card__more').fancybox().attr('data-fancybox', 'group');
+  $('.partners-card__more').fancybox().attr('data-fancybox', 'group');
 
   // Fixed header
   let fixedHeader = function(e) {

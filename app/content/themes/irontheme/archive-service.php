@@ -41,24 +41,6 @@
           </div>
         </section>
 
-      <?php endif;
-
-      $up_events = new WP_Query( $args_up );
-
-      if ( $up_events->have_posts() ) : ?>
-        <section class="last-news">
-          <h2 class="section-title">Upcoming events</h2>
-
-          <div class="last-news__list">
-            <?php
-            while ( $up_events->have_posts() ):
-              $up_events->the_post();
-              get_template_part( 'template-parts/event', 'card' );
-            endwhile; wp_reset_postdata(); ?>
-          </div>
-
-          <?php the_posts_navigation(); ?>
-        </section>
       <?php endif; ?>
 
     </main><!-- #main -->

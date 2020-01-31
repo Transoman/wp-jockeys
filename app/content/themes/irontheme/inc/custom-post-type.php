@@ -45,7 +45,7 @@ function partner_post_type() {
   $args = array(
     'label'                 => __( 'Partner', 'ith' ),
     'labels'                => $labels,
-    'supports'              => array( 'title', 'thumbnail' ),
+    'supports'              => array( 'title', 'thumbnail', 'editor' ),
     'hierarchical'          => false,
     'public'                => false,
     'show_ui'               => true,
@@ -93,6 +93,7 @@ function service_post_type() {
     'exclude_from_search'   => false,
     'publicly_queryable'    => true,
     'capability_type'       => 'page',
+    'show_in_rest'          => true
   );
   register_post_type( 'service', $args );
 
